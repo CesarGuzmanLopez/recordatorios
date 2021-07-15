@@ -22,7 +22,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark  shadow-sm bg-dark">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -30,10 +30,20 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class=" navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
+                    <ul class="navbar-nav">
+                            @hasrole("Administrador")
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ route('AdminUser.index') }}">Usuario </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ route('adminitems.index') }}">Items </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ route('adminAvisos.index') }}">Administrar Avisos</a>
+                            </li>
+                            @endhasrole
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -74,7 +84,6 @@
                 </div>
             </div>
         </nav>
-
         <main class="py-4">
             @yield('content')
 
