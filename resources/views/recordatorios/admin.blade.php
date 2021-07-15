@@ -29,32 +29,24 @@
                         <select name="Usuario" class="form-select form-select-sm" aria-label=".form-select-sm example">
                             <option selected>Tipo de recordatorio </option>
                             <option value="1">Whatsappp</option>
-                            <option value="2">correo</option>
-                            <option value="3">correo y whatsapp</option>
+                            <option value="2">Correo</option>
+                            <option value="3">Correo y Whatsapp</option>
                         </select>
                     </div>
 
                     <div class="form-group col">
                         <select name="Usuario" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                            <option selected>Reco </option>
+                            <option selected>Concurrencia </option>
                             <option value="1">por kilometraje</option>
                             <option value="2">cada 3 meses</option>
                             <option value="3">unico</option>
                         </select>
                     </div>
-
-
                     <div class="form-group col">
-
-                        <input type="checkbox"/>
+                        <input type="number" placeholder="kilometraje">
                     </div>
-                    que parece esto enserio es demasiado dificil
-
-
-
-
                     <div class="form-group col">
-                        <label for="recipient-name" class="col-form-label"></label>
+                      <button type="submit">Agregar recordatorio</button>
                     </div>
                 </div>
             </form>
