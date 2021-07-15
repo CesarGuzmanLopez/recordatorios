@@ -26,9 +26,9 @@ class Recordatorios extends Migration
             $table->timestamps();
         });
 
-        Schema::create('Avisos', function (Blueprint $table) {
+        Schema::create('avisos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("ID_Usuario")->comment("Usuario que recivira el mensaje");
+            $table->unsignedBigInteger("ID_Usuario")->comment("Usuario que recibira el mensaje");
             $table->unsignedBigInteger("ID_item")->nullable();
             $table->unsignedBigInteger("Medio_de_Aviso")->comment("1.- whtasapp 2.- correo, 3 ambos");
             $table->text("Descripcion")->nullable();
