@@ -103,7 +103,7 @@
                                 </td>
                                 <td>
                                     <button class=" btn-warning" @click="editaritem (
-                                                    '{{ $item->id }}',
+                                                    '{{ $item->id  }}',
                                                     ' {{ $item->Serie }}',
                                                     ' {{ $item->Motor }}',
                                                     ' {{ $item->placas }}',

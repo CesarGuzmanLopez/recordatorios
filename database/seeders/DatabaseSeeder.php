@@ -19,8 +19,6 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-
-
         $user = \App\Models\User::create([
             'name' => "Administrador",
             'lastname'=>"Admin",
