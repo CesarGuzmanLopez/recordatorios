@@ -73,7 +73,7 @@
                         <th scope="col">Tipo de recordatorio</th>
                         <th scope="col">Descripcion</th>
                         <th scope="col">Eliminar</th>
-                        <th scope="col">Enviar eliminar</th>
+                        <th scope="col">Enviar </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -96,7 +96,7 @@
                                     @csrf
                                     <input type="hidden" name="_method" value="delete" />
 
-                                    <button> enviar eliminar</button>
+                                    <button> Enviar </button>
                                 </form>
                             </td>
                         </tr>

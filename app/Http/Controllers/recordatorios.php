@@ -80,6 +80,10 @@ class recordatorios extends Controller
         }
         $nuevo->Descripcion = "$request->Descripcion";
         $nuevo->save();
+
+
+
+
         return back();
     }
 
@@ -125,8 +129,13 @@ class recordatorios extends Controller
      */
     public function destroy($id)
     {
+
+
+
         $Avi = Aviso::find($id);
         $Avi->delete();
         return back();
+
+
     }
 }
