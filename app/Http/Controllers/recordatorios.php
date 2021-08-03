@@ -79,6 +79,7 @@ class recordatorios extends Controller
         }
         $nuevo->Descripcion = "$request->Descripcion";
         $nuevo->save();
+        return back();
     }
 
     /**
