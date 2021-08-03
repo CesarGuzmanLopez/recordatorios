@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Aviso
- * 
+ *
  * @property int $id
  * @property int $ID_Usuario
  * @property int|null $ID_item
@@ -20,7 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon $Fecha_de_recordatorio
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property User $user
  *
  * @package App\Models
@@ -51,4 +51,9 @@ class Aviso extends Model
 	{
 		return $this->belongsTo(User::class, 'ID_Usuario');
 	}
+    public function item()
+	{
+		return $this->belongsTo(Item::class, 'ID_item');
+	}
+
 }

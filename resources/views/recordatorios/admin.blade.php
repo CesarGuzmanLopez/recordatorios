@@ -29,22 +29,24 @@
                     <div class="form-group col">
                         <select name="Tipo" class="form-select form-select-sm" aria-label=".form-select-sm example">
                             <option value="" selected>Tipo de recordatorio </option>
-                            <option value="1">Whatsappp</option>
                             <option value="2">Correo</option>
-                            <option value="3">Correo y Whatsapp</option>
                         </select>
                     </div>
 
                     <div class="form-group col">
                         <select name="Concurrencia" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                            <option value=""  selected>Concurrencia </option>
                             <option value="1">Por kilometraje</option>
                             <option value="2">Cada 3 meses</option>
                             <option value="3">Unico</option>
                         </select>
                     </div>
+                    <div>
+                    </div>
                     <div class="form-group col">
-                        <input type="number" placeholder="kilometraje">
+                        <input name="Kilo" type="number" placeholder="kilometraje">
+                    </div>
+                    <div class="form-group col">
+                        <textarea name="Descripcion" rows="1" cols="50" placeholder="Descripcion"></textarea>
                     </div>
                     <div class="form-group col">
                         <button type="submit" class="button">Agregar recordatorio</button>
@@ -58,21 +60,35 @@
                     <tr>
                         <th scope="col">Usuario</th>
                         <th scope="col">Automovil</th>
-                        <th scope="col">Tipo de recordatoriop</th>
-                        <th scope="col">Concurrencia</th>
-                        <th scope="col">Kilometraje</th>
+                        <th scope="col">Tipo de recordatorio</th>
+                        <th scope="col">Descripcion</th>
                         <th scope="col">Eliminar</th>
+                        <th scope="col">Enviar eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($Avisos as $Aviso)
                         <tr>
-                            <td>Usuario</td>
-                            <td>Automovil</td>
-                            <td>Tipo de recordatoriop</td>
-                            <td>Concurrencia</td>
-                            <td>Kilometraje</td>
-                            <td>Eliminar</td>
+                            <td>{{ $Aviso->User->name }} {{ $Aviso->User->lastname }}</td>
+                            <td> <b> serie: {{ $Aviso->Item->Serie }}</b> {{ $Aviso->Item->placas }}</td>
+                            <td>correo</td>
+                            <td><textarea readonly>{{ $Aviso->Descripcion }}</textarea></td>
+                            <td>
+                                <form action="{{ route('adminAvisos.destroy', $Aviso->id) }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="_method" value="delete" />
+
+                                    <button> eliminar</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="{{ route('adminAvisos.destroy', $Aviso->id) }}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="_method" value="delete" />
+
+                                    <button> enviar eliminar</button>
+                                </form>
+                            </td>
                         </tr>
 
                     @endforeach
