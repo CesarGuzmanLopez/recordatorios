@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Recordatorio;
 use App\Models\Aviso;
 use App\Models\Item;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class recordatorios extends Controller
 {
@@ -118,7 +120,10 @@ class recordatorios extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $Avi = Aviso::find($id);
+        //echo $Avi->user->email;
+        Mail::to($Avi->user->email)->send(new Recordatorio($Avi));
+        return back();
     }
 
     /**
@@ -134,6 +139,7 @@ class recordatorios extends Controller
 
         $Avi = Aviso::find($id);
         $Avi->delete();
+
         return back();
 
 

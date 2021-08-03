@@ -92,10 +92,10 @@
                                 </form>
                             </td>
                             <td>
-                                <form action="{{ route('adminAvisos.destroy', $Aviso->id) }}" method="post">
+                                <form action="{{ route('adminAvisos.update', $Aviso->id) }}" method="post">
                                     @csrf
-                                    <input type="hidden" name="_method" value="delete" />
-
+                                    <input type="hidden" name="_method" value="PATCH" />
+                                    <input type="hidden" name="Enviar" value="true">
                                     <button> Enviar </button>
                                 </form>
                             </td>
