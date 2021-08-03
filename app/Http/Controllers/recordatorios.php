@@ -48,10 +48,11 @@ class recordatorios extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'ID_Usuario' => 'required',
+        //    'ID_Usuario' => 'required',
             'Automovil' => 'required',
             'Tipo' => 'required',
             'Concurrencia' => 'required'
+
         ]);
         $nuevo = new Aviso();
         $nuevo->ID_Usuario = $request->Usuario;
