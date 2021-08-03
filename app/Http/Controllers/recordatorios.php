@@ -36,7 +36,7 @@ class recordatorios extends Controller
      */
     public function create()
     {
-        return 64;
+
     }
 
     /**
@@ -53,7 +53,32 @@ class recordatorios extends Controller
             'Tipo' => 'required',
             'Concurrencia' => 'required'
         ]);
+        $nuevo = new Aviso();
+        $nuevo->ID_Usuario = $request->Usuario;
+        $nuevo->ID_item = $request->Automovil;
+        $nuevo->Medio_de_Aviso = $request->Tipo;
+        $fech = date('d/m/Y ', $request->time);
+        switch ($request->Concurrencia) {
+            case 0:
+                $nuevo->Fecha_de_recordatorio =  $fech;
+                $nuevo->Descripcion = "Concurrencia: Por kilometraje". $request->Kilo." \n";
+                break;
 
+            case 1:
+                $nuevo->Fecha_de_recordatorio =  $fech;
+                $nuevo->Descripcion = "Concurrencia: Cada 3 meses\n";
+                break;
+
+            case 3:
+                $nuevo->Fecha_de_recordatorio =  $fech;
+                $nuevo->Descripcion = "Concurrencia: Unico -" . $fech . "\n";
+                $nuevo->Fecha_de_recordatorio = date('Y-m-d H:i:s');
+            default:
+                $nuevo->Fecha_de_recordatorio =  $fech;
+                $nuevo->Descripcion = "Concurrencia: Unico -" . $fech . "\n";
+        }
+        $nuevo->Descripcion = "$request->Descripcion";
+        $nuevo->save();
     }
 
     /**
@@ -98,6 +123,8 @@ class recordatorios extends Controller
      */
     public function destroy($id)
     {
-        //
+        $Avi = Aviso::find($id);
+        $Avi->delete();
+        return back();
     }
 }

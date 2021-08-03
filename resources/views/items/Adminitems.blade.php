@@ -99,7 +99,7 @@
                                     {{ $item->Kilometros }}
                                 </td>
                                 <td>
-                                    {{ $item->Ultimo_mantenimiento ? date('d/m/Y ', strtotime($item->Ultimo_mantenimiento)) : '' }}
+                                    {{ $item->Ultimo_mantenimiento ? date('d/m/Y ', strtotime($item->Ultimo_mantenimiento)): '' }}
                                 </td>
                                 <td>
                                     <button class=" btn-warning" @click="editaritem (
