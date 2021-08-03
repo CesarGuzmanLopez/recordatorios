@@ -1,1 +1,1 @@
-Se le envia {{ $aviso->Descripcion }}
+Se le envia {{ $Aviso->Descripcion }}
