@@ -3,6 +3,15 @@
 
     <div class="container bg-white rounded-lg">
         <div class="container p-2 m-2">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="text-center"><b>Añadir recordatorio</b></div>
             <form method="POST" action="{{ route('adminAvisos.index') }}">
                 @csrf
