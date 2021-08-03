@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Aviso;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -28,6 +29,6 @@ class Recordatorio extends Mailable
      */
     public function build()
     {
-        return $this->view("mailrecor");
+        return $this->view("mailrecor")->with("Aviso",$this->Aviso);
     }
 }
