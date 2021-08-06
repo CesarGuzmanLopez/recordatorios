@@ -3,9 +3,8 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center ">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Escritorio</div>
+            <div class="">
+                <div class="card" style="background: rgba(250, 240, 240,.2 )">
 
                     <div class="card-body">
                         @if (session('status'))
@@ -16,13 +15,26 @@
                         <div class="row text-center center">
                             @hasrole("Administrador")
                             <div class="col">
-                                <h1><a href="{{ route('AdminUser.index') }}">Usuario </a></h1>
+                                <h3><a href="{{ route('AdminUser.index') }}">Usuario </a></h3>
+
+                                <div class="">
+                                    <a href="{{ route('AdminUser.index') }}">  <img src="{{ env('APP_URL') }}/Imagen1.jpg" alt=""></a>
+
+                                </div>
                             </div>
                             <div class="col">
-                                <h1><a href="{{ route('adminitems.index') }}">Items </a></h1>
+                                <h3><a href="{{ route('adminitems.index') }}">Unidades/Equipos </a></h3>
+                                <div class="">
+                                    <a href="{{ route('adminitems.index') }}"> <img src="{{ env('APP_URL') }}/Imagen2.jpg" alt=""></a>
+
+                                </div>
                             </div>
                             <div class="col">
-                                <h1><a href="{{ route('adminAvisos.index') }}">Administrar Avisos</a></h1>
+                                <h3><a href="{{ route('adminAvisos.index') }}">Administrar Avisos</a></h3>
+                                <div class="">
+                                    <a href="{{ route('adminAvisos.index') }}"> <img src="{{ env('APP_URL') }}/Imagen3.png" alt=""></a>
+
+                                </div>
                             </div>
                             @endhasrole
                         </div>

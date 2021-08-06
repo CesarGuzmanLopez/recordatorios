@@ -89,10 +89,7 @@
             @yield('content')
 
         </main>
-        <div class="float-lg-right p-4">
-            <img src="{{ env("APP_URL") }}/img.jpg" alt="">
 
-        </div>
     </div>
 </body>
 </html>
