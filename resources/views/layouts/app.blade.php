@@ -29,8 +29,13 @@
         <img src="" alt="">
         <nav class="navbar navbar-expand-md navbar  shadow-sm bg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a style=" " class="navbar-brand" href="{{ url('/') }}">
+                   <img  style=" 	    width: 231px;
+                   height: 200px;
+                   margin: -36px;
+                   margin-top: -150px;
+                   -webkit-clip-path: inset(62% 8% 15% 10%);
+                  "src="{{ env('APP_URL') }}/logo.gif" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
