@@ -49,7 +49,7 @@
                                 <a class="nav-link" href="{{ route('AdminUser.index') }}">Usuario </a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="{{ route('adminitems.index') }}">Items </a>
+                                <a class="nav-link" href="{{ route('adminitems.index') }}">Unidades/Equipos </a>
                             </li>
                             <li class="nav-item active">
                                 <a class="nav-link" href="{{ route('adminAvisos.index') }}">Administrar Avisos</a>

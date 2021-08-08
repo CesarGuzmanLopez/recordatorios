@@ -21,7 +21,9 @@ class Recordatorios extends Migration
             $table->string("Motor")->unique()->nullable();
             $table->string("placas")->unique()->nullable();
             $table->string("Descripcion")->nullable();
-            $table->double("Kilometros")->nullable();
+            $table->string("kilometros")->unique()->nullable();
+            $table->string("poliza")->nullable();
+            $table->string("departamento")->nullable();
             $table->date("Ultimo_mantenimiento")->nullable();
             $table->timestamps();
         });

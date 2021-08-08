@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Item
- * 
+ *
  * @property int $id
  * @property string|null $Serie
  * @property string|null $Motor
@@ -42,6 +42,8 @@ class Item extends Model
 		'placas',
 		'Descripcion',
 		'Kilometros',
-		'Ultimo_mantenimiento'
+		'Ultimo_mantenimiento',
+        'poliza',
+        'departamento'
 	];
 }

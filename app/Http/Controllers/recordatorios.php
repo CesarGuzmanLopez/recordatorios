@@ -121,7 +121,9 @@ class recordatorios extends Controller
     public function update(Request $request, $id)
     {
         $Avi = Aviso::find($id);
-        //echo $Avi->user->email;
+
+
+
         Mail::to($Avi->user->email)->send(new Recordatorio($Avi));
         return back();
     }

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container container-sm container-fluid bg-white">
-        <h1 class="text-center"><b>Items</b></h1>
+        <h1 class="text-center"><b>Unidades/Equipos</b></h1>
         <button type="button" class="btn btn-primary m-2 p-2" data-toggle="modal" data-target="#user-id-2">Agregar</button>
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -52,7 +52,20 @@
                                 <input type="date" class="form-control" name="ultimo_mantenimiento" id="recipient-name"
                                     value="">
                             </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">poliza </label>
+                                <input type="text" class="form-control" name="poliza" id="recipient-name" value="">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">departamento </label>
+                                <input type="text" class="form-control" name="departamento" id="recipient-name" value="">
+                            </div>
                         </div>
+
+
+
+
+
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">
@@ -71,6 +84,8 @@
                             <th scope="col">Serie</th>
                             <th scope="col">Motor</th>
                             <th scope="col">placas</th>
+                            <th scope="col">poliza</th>
+                            <th scope="col">departamento</th>
                             <th scope="col">Descripcion</th>
                             <th scope="col">Kilometros</th>
                             <th scope="col">Ultimo mantenimiento</th>
@@ -93,25 +108,35 @@
                                     {{ $item->placas }}
                                 </td>
                                 <td>
+                                    {{ $item->poliza }}
+                                </td>
+                                <td>
+                                    {{ $item->departamento }}
+                                </td>
+                                <td>
                                     {{ $item->Descripcion }}
                                 </td>
                                 <td>
-                                    {{ $item->Kilometros }}
+                                    {{ $item->kilometros }}
                                 </td>
                                 <td>
-                                    {{ $item->Ultimo_mantenimiento ? date('d/m/Y ', strtotime($item->Ultimo_mantenimiento)): '' }}
+                                    {{ $item->Ultimo_mantenimiento ? date('d/m/Y ', strtotime($item->Ultimo_mantenimiento)) : '' }}
                                 </td>
                                 <td>
                                     <button class=" btn-warning" @click="editaritem (
-                                                    '{{ $item->id  }}',
-                                                    ' {{ $item->Serie }}',
-                                                    ' {{ $item->Motor }}',
-                                                    ' {{ $item->placas }}',
-                                                    ' {{ $item->Descripcion }}',
-                                                     {{ $item->Kilometros }},
-                                                    '{{ $item->Ultimo_mantenimiento ? date('Y-m-d', strtotime($item->Ultimo_mantenimiento)) : '' }}'
-                                                 )">editar</button>
+                                                            '{{ $item->id }}',
+                                                            ' {{ $item->Serie }}',
+                                                            ' {{ $item->Motor }}',
+                                                            ' {{ $item->placas }}',
+                                                            ' {{ $item->Descripcion }}',
+                                                             '{{ $item->Kilometros }}',
+                                                            '{{ $item->Ultimo_mantenimiento ? date('Y-m-d', strtotime($item->Ultimo_mantenimiento)) : '' }}',
+                                                            '{{ $item->poliza }}',
+                                                            '{{ $item->departamento }}'
+
+                                                         )">editar</button>
                                 </td>
+
                                 <td>
                                     <button class=" btn-danger"
                                         @click="eliminaritem ( {{ $item->id }}, ' {{ $item->Serie }}' , ' {{ $item->Motor }}')">eliminar</button>
@@ -164,15 +189,25 @@
                         <input type="number" class="form-control" name="Kilometros" id="recipient-name"
                             v-model="edit_item.Kilometros">
                     </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">poliza:</label>
+                        <input type="number" class="form-control" name="poliza" id="recipient-name"
+                            v-model="edit_item.poliza">
+                    </div>
 
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Ultimo mantenimiento </label>
                         <input type="date" class="form-control" name="ultimo_mantenimiento" id="recipient-name"
                             v-model="edit_item.Ultimo_mantenimiento">
                     </div>
-
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Departamento</label>
+                        <input type="text" class="form-control" name="departamento" id="recipient-name"
+                            v-model="edit_item.departamento">
+                    </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal"  @click="editaritemOcultar">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                            @click="editaritemOcultar">Close</button>
                         <button type="submit" class="btn btn-primary">
                             editar
                         </button>

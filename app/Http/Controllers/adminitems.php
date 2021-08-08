@@ -38,7 +38,8 @@ class adminitems extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'motor' => 'required|unique:items|max:255'
+            'placas' => 'unique:items|max:255',
+            'serie' => 'required|unique:items|max:255'
         ]);
         //  $request->ultimo_mantenimiento;
         $item = Item::create([
@@ -47,6 +48,8 @@ class adminitems extends Controller
             'placas' => $request->placas,
             'Descripcion' => $request->descripcion,
             'Kilometros' => $request->Kilometros,
+            'poliza' => $request->poliza,
+            'departamento' => $request->departamento,
             'Ultimo_mantenimiento' =>  $request->ultimo_mantenimiento
         ]);
 

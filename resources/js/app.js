@@ -58,6 +58,8 @@ const app = new Vue({
             placas: "",
             Descripcion: "",
             Kilometros: 0,
+            departamento:"",
+            poliza:"",
             Ultimo_mantenimiento: "",
         }
 
@@ -102,7 +104,7 @@ const app = new Vue({
             placas,
             Descripcion,
             Kilometros,
-            Ultimo_mantenimiento) {
+            Ultimo_mantenimiento,poliza,departamento) {
 
             this.$refs['edititem'].show();
             this.edit_item.id = id;
@@ -112,6 +114,8 @@ const app = new Vue({
             this.edit_item.Descripcion = Descripcion;
             this.edit_item.Kilometros = Kilometros;
             this.edit_item.Ultimo_mantenimiento = Ultimo_mantenimiento;
+            this.edit_item.poliza = poliza;
+            this.edit_item.departamento = departamento;
         },
         editaritemOcultar(id, Serie, Motor) {
             this.$refs['edititem'].hide();
