@@ -35,7 +35,7 @@
                    margin: -36px;
                    margin-top: -150px;
                    -webkit-clip-path: inset(62% 8% 15% 10%);
-                  "src="{{ env('APP_URL') }}/logo.gif?15" alt="">
+                  "src="{{ env('APP_URL') }}/logo.gif" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
