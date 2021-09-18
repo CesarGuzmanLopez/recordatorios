@@ -80,7 +80,7 @@
                     @foreach ($Avisos as $Aviso)
                         <tr>
                             <td>{{ $Aviso->User->name }} {{ $Aviso->User->lastname }}</td>
-                            <td> <b> serie: {{ $Aviso->Item->Serie }}</b> {{ $Aviso->Item->placas }}</td>
+                            <td> <b> serie: {{ $Aviso->Item->Serie??"" }}</b> {{ $Aviso->Item->placas??"" }}</td>
                             <td>correo</td>
                             <td><textarea readonly>{{ $Aviso->Descripcion }}</textarea></td>
                             <td>
