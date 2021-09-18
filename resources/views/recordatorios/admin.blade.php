@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="form-group col">
 
-                        <select name="Usuario" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                        <select name="Usuario" class="form-select form-select-sm" aria-label=".form-select-sm example" required>
                             <option selected>Selecciona Usuario</option>
                             @foreach ($Usuarios as $User)
                                 <option value="{{ $User->id }}">{{ $User->name }} {{ $User->lastname }}</option>
@@ -62,6 +62,10 @@
                     <div class="form-group col">
                         <button type="submit" class="button">Agregar recordatorio</button>
                     </div>
+                    <button type="submit" class="btn btn-secundary">
+                        Guardar csv
+                    </button>
+
                 </div>
             </form>
         </div>
