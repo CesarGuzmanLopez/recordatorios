@@ -51,12 +51,13 @@
                             <button type="submit" class="btn btn-primary">
                                 agregar
                             </button>
-                            <button type="submit" class="btn btn-secundary">
-                                Guardar csv
-                            </button>
 
                         </div>
                     </form>
+                    <button type="submit" class="btn btn-secundary border-bottom">
+                        Guardar csv
+                    </button>
+
                 </div>
             </div>
         </div>

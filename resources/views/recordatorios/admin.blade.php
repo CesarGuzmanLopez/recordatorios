@@ -62,12 +62,14 @@
                     <div class="form-group col">
                         <button type="submit" class="button">Agregar recordatorio</button>
                     </div>
-                    <button type="submit" class="btn btn-secundary">
-                        Guardar csv
-                    </button>
+
+
 
                 </div>
             </form>
+            <button type="submit" class="btn btn-secundary border-bottom">
+                Guardar csv
+            </button>
         </div>
         <div class="container-md p-5">
             <table class="table ">
