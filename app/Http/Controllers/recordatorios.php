@@ -60,7 +60,7 @@ class recordatorios extends Controller
         $nuevo->ID_Usuario = $request->Usuario;
         $nuevo->ID_item = $request->Automovil;
         $nuevo->Medio_de_Aviso = $request->Tipo;
-        $fech = date('d/m/Y ', $request->time);
+        $fech = date('Y-m-d H:i:s ', $request->time);
         switch ($request->Concurrencia) {
             case 0:
                 $nuevo->Fecha_de_recordatorio =  $fech;
