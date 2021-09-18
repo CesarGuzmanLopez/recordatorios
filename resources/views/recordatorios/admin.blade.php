@@ -37,8 +37,9 @@
 
                     <div class="form-group col">
                         <select name="Tipo" class="form-select form-select-sm" aria-label=".form-select-sm example">
-                            <option value="" selected>Tipo de recordatorio </option>
-                            <option value="2">Correo</option>
+                            <option value="2" selected>Correo</option>
+                            <option value="">Tipo de recordatorio </option>
+
                         </select>
                     </div>
 
