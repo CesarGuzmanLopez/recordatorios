@@ -3,6 +3,10 @@
     <div class="container container-sm container-fluid bg-white">
         <h1 class="text-center"><b>Unidades/Equipos</b></h1>
         <button type="button" class="btn btn-primary m-2 p-2" data-toggle="modal" data-target="#user-id-2">Agregar</button>
+        <button type="submit" class="btn btn-secundary border-bottom">
+            Guardar csv
+        </button>
+
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -74,9 +78,6 @@
 
                         </div>
                     </form>
-                    <button type="submit" class="btn btn-secundary border-bottom">
-                        Guardar csv
-                    </button>
 
                 </div>
             </div>
@@ -196,7 +197,7 @@
                     </div>
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">poliza:</label>
-                        <input type="number" class="form-control" name="poliza" id="recipient-name"
+                        <input type="text" class="form-control" name="poliza" id="recipient-name"
                             v-model="edit_item.poliza">
                     </div>
 

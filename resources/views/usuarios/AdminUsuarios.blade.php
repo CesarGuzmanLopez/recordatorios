@@ -3,6 +3,10 @@
     <div class="container bg-white">
         <h1 class="text-center"><b>Usuarios</b></h1>
         <button type="button" class="btn btn-primary m-2 p-2" data-toggle="modal" data-target="#user-id-2">Agregar</button>
+
+        <button type="submit" class="btn btn-secundary border-bottom">
+            Guardar csv
+        </button>
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -54,9 +58,6 @@
 
                         </div>
                     </form>
-                    <button type="submit" class="btn btn-secundary border-bottom">
-                        Guardar csv
-                    </button>
 
                 </div>
             </div>
