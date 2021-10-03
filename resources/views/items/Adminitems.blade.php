@@ -3,10 +3,9 @@
     <div class="container container-sm container-fluid bg-white">
         <h1 class="text-center"><b>Unidades/Equipos</b></h1>
         <button type="button" class="btn btn-primary m-2 p-2" data-toggle="modal" data-target="#user-id-2">Agregar</button>
-        <button type="submit" class="btn btn-secundary border-bottom">
+        <a class="btn btn-info"  href="{{ route("exportXLS.show","Items") }}" class="btn btn-secundary border-bottom">
             Guardar csv
-        </button>
-
+        </a>
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -190,7 +189,7 @@
                             v-model="edit_item.Descripcion">
                     </div>
 
-                    <div class="form-group">
+                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Kilometros:</label>
                         <input type="number" class="form-control" name="Kilometros" id="recipient-name"
                             v-model="edit_item.Kilometros">

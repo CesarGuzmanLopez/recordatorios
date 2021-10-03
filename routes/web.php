@@ -21,6 +21,7 @@ Route::group(['middleware' => ['role:Administrador']], function () {
     Route::resource('AdminUser', App\Http\Controllers\adduser::class);
     Route::resource('adminitems', App\Http\Controllers\adminitems::class);
     Route::resource('adminAvisos', App\Http\Controllers\recordatorios::class);
+    Route::resource('exportXLS', App\Http\Controllers\xlsexport::class);
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -4,9 +4,9 @@
         <h1 class="text-center"><b>Usuarios</b></h1>
         <button type="button" class="btn btn-primary m-2 p-2" data-toggle="modal" data-target="#user-id-2">Agregar</button>
 
-        <button type="submit" class="btn btn-secundary border-bottom">
+        <a class="btn btn-info"  href="{{ route("exportXLS.show","Usuarios") }}" class="btn btn-secundary border-bottom">
             Guardar csv
-        </button>
+        </a>
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>

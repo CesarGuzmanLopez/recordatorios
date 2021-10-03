@@ -67,9 +67,9 @@
 
                 </div>
             </form>
-            <button type="submit" class="btn btn-secundary border-bottom">
+            <a class="btn btn-info"  href="{{ route("exportXLS.show","Recordatorios") }}" class="btn btn-secundary border-bottom">
                 Guardar csv
-            </button>
+            </a>
         </div>
         <div class="container-md p-5">
             <table class="table ">
