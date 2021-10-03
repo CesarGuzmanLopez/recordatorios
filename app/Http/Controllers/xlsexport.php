@@ -118,7 +118,7 @@ class xlsexport extends Controller
                     $row =  array();
 
                     foreach ($Avisos as $Aviso) {
-                        echo $Aviso;
+
                         $row["Nombre_usuario"]= $Aviso->User->name ." ". $Aviso->User->lastname;
                         $row["Serie"]= $Aviso->Item->Serie??"";
                         $row["Placas"]= $Aviso->Item->placas??"";
